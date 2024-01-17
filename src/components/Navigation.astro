@@ -1,26 +1,14 @@
 ---
 import ResponsiveToggle from "./ResponsiveToggle.astro";
 import { DarkMode } from "accessible-astro-components";
-import { Image } from "astro:assets";
-import logo from '../assets/img/logo.svg'
-import mylogo from "../assets/img/kimono.avif";
-
 ---
 
 <div id="main-navigation" class="is-desktop py-8">
   <div class="container">
     <a href="/" class="flex items-center gap-2 !no-underline">
-      <!-- <Image src={logo} alt="Your Logo" width="47" height="37" /> -->
-      <!-- <img
+      <img
         id="nav-logo"
-        src="/public/social-preview-image.png"
-        alt="Karadimas"
-        width="200"
-        height="100"
-      /> -->
-      <Image
-        id="nav-logo"
-        src="https://raw.githubusercontent.com/georgevgs/karadimas/main/src/assets/img/karadimas-logo.avif?token=GHSAT0AAAAAACMYGEN5RSQP2WJII64QSWQKZNIHPWQ"
+        src="/public/images/karadimas-logo.avif"
         alt="Karadimas"
         width="200"
         height="100"
@@ -147,29 +135,29 @@ import mylogo from "../assets/img/kimono.avif";
       }
     };
 
-    // const updateLogo = () => {
-    //   const logoElement = document.getElementById(
-    //     "nav-logo"
-    //   ) as HTMLImageElement;
+    const updateLogo = () => {
+      const logoElement = document.getElementById(
+        "nav-logo"
+      ) as HTMLImageElement;
 
-    //   if (logoElement && document.body.classList.contains("darkmode")) {
-    //     logoElement.src =
-    //       "/_image?href=%2F%40fs%2FUsers%2Fgvagdas%2FDocuments%2FDev%2Fikaradimas%2Fsrc%2Fassets%2Fimg%2Fkaradimas-logo-darkmode.avif%3ForigWidth%3D300%26origHeight%3D150%26origFormat%3Davif&w=200&h=100&f=webp";
-    //   } else {
-    //     logoElement.src =
-    //       "/_image?href=%2F%40fs%2FUsers%2Fgvagdas%2FDocuments%2FDev%2Fikaradimas%2Fsrc%2Fassets%2Fimg%2Fkaradimas-logo.avif%3ForigWidth%3D300%26origHeight%3D150%26origFormat%3Davif&w=200&h=100&f=webp";
-    //   }
-    // };
+      if (logoElement && document.body.classList.contains("darkmode")) {
+        logoElement.src =
+          "/public/images/karadimas-logo-darkmode.avif";
+      } else {
+        logoElement.src =
+          "/public/images/karadimas-logo.avif";
+      }
+    };
 
-    // // Run updateLogo on page load
-    // updateLogo();
+    // Run updateLogo on page load
+    updateLogo();
 
-    // // Observer to detect class changes on the body
-    // const observer = new MutationObserver(updateLogo);
-    // observer.observe(document.body, {
-    //   attributes: true,
-    //   attributeFilter: ["class"],
-    // });
+    // Observer to detect class changes on the body
+    const observer = new MutationObserver(updateLogo);
+    observer.observe(document.body, {
+      attributes: true,
+      attributeFilter: ["class"],
+    });
 
     // execution
     mainMenu &&
