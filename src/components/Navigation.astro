@@ -1,14 +1,15 @@
 ---
 import ResponsiveToggle from "./ResponsiveToggle.astro";
 import { DarkMode } from "accessible-astro-components";
+import { Image } from "astro:assets";
 ---
 
 <div id="main-navigation" class="is-desktop py-8">
   <div class="container">
     <a href="/" class="flex items-center gap-2 !no-underline">
-      <img
+      <Image
         id="nav-logo"
-        src="/public/images/karadimas-logo.avif"
+        src="https://res.cloudinary.com/dz7agxkip/image/upload/v1705524748/karadimas-logo_cxt3dl.avif"
         alt="Karadimas"
         width="200"
         height="100"
@@ -142,10 +143,10 @@ import { DarkMode } from "accessible-astro-components";
 
       if (logoElement && document.body.classList.contains("darkmode")) {
         logoElement.src =
-          "/public/images/karadimas-logo-darkmode.avif";
+          "https://res.cloudinary.com/dz7agxkip/image/upload/v1705524859/karadimas-logo-darkmode_qfuxja.avif";
       } else {
         logoElement.src =
-          "/public/images/karadimas-logo.avif";
+          "https://res.cloudinary.com/dz7agxkip/image/upload/v1705524748/karadimas-logo_cxt3dl.avif";
       }
     };
 
