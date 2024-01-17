@@ -4,7 +4,14 @@ export const content = [
   "./node_modules/flowbite/**/*.js",
 ];
 export const theme = {
-  extend: {},
+  extend: {
+    width: {
+      1200: "1200px",
+    },
+    height: {
+      800: "800px",
+    },
+  },
 };
 export const plugins = [require("flowbite/plugin")];
 export const darkMode = ["class", ".darkmode"];
