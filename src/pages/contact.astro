@@ -1,0 +1,193 @@
+---
+import DefaultLayout from "../layouts/DefaultLayout.astro";
+---
+
+<DefaultLayout title="contact">
+  <section class="contact-form">
+    <div class="container">
+      <form
+        id="contact-form"
+        name="contact"
+        method="POST"
+        data-netlify="true"
+        netlify-honeypot="person-title"
+        class="transform rounded-lg p-6 shadow-md transition-transform duration-300"
+      >
+        <div id="form-inputs">
+          <input type="hidden" name="form-name" value="contact" />
+          <div class="hidden">
+            <input name="person-title" />
+          </div>
+          <input
+            id="name"
+            type="text"
+            name="name"
+            placeholder="Ονοματεπώνυμο"
+            required
+          />
+          <input
+            id="email"
+            type="email"
+            name="email"
+            placeholder="Email"
+            required
+          />
+          <textarea id="message" name="message" placeholder="Μήνυμα" required
+          ></textarea>
+          <div>
+            <label class="font-bold">
+              <input type="checkbox" name="terms" required />
+              Έχω διαβάσει και αποδέχομαι την
+              <a href="/privacy" target="_blank">πολιτική απορρήτου</a>
+            </label>
+          </div>
+          <div class="flex items-center justify-center">
+            <button class="button" type="submit">Αποστολή</button>
+          </div>
+        </div>
+      </form>
+    </div>
+  </section>
+  <hr
+    class="mx-auto my-4 h-1 w-48 rounded border-0 bg-gray-100 dark:bg-gray-700 md:my-10"
+  />
+  <section class="contact-details">
+    <div class="mx-auto grid max-w-4xl grid-cols-1 gap-4 p-8 md:grid-cols-2">
+      <div class="mb-4 pl-4 pr-4 md:mb-0 md:justify-self-start">
+        <p class="text-2xl font-bold">Καραδήμας</p>
+        <p class="text-lg font-bold">
+          Email : <a href="mailto:info@ikaradimas.gr" class="green-text"
+            ><span class="blockspam hidden" aria-hidden="true">Hello!</span>
+            info@<!-- sdfjsdhfkjypcs -->ikaradimas.gr</a
+          >
+        </p>
+        <p class="text-lg font-bold">
+          Τηλέφωνο : <a href="tel:+30210622589" class="green-text">210 622589</a
+          >
+        </p>
+        <p class="text-lg font-bold">Γούναρη 209</p>
+        <p class="text-lg font-bold">Γλυφάδα</p>
+        <p class="text-lg font-bold">166 74</p>
+      </div>
+      <div class="pl-4 pr-4 md:justify-self-end">
+        <p class="text-2xl font-bold">Ωράριο λειτουργίας</p>
+        <p class="text-lg font-bold">
+          Δευτέρα - Τετάρτη - Σάββατο: <br /><span class="green-text"
+            >09:00 - 14:00</span
+          >
+        </p>
+        <p class="text-lg font-bold">
+          Τρίτη - Πέμπτη - Παρασκευή: <br /><span class="green-text"
+            >09:00 - 14:00 & 17:30 - 20:00</span
+          >
+        </p>
+      </div>
+    </div>
+  </section>
+  <hr
+    class="mx-auto my-4 h-1 w-48 rounded border-0 bg-gray-100 dark:bg-gray-700 md:my-10"
+  />
+  <section class="map">
+    <div
+      class="mx-auto grid max-w-full grid-cols-1 items-center justify-center gap-4 p-8 md:grid-cols-1"
+    >
+      <div class="h-96 w-full md:max-h-[500px]">
+        <iframe
+          class="h-full w-full"
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3149.6084353592214!2d23.76363397588796!3d37.869451471961625!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14a195ded48e505d%3A0xf5cdce045bff24fa!2sIoannis%20Karadimas!5e0!3m2!1sen!2sgr!4v1705314547149!5m2!1sen!2sgr"
+          style="border:0; -webkit-filter: grayscale(100%);
+          filter: grayscale(100%);"
+          allowfullscreen=""
+          loading="lazy"
+          referrerpolicy="no-referrer-when-downgrade"></iframe>
+      </div>
+    </div>
+  </section>
+</DefaultLayout>
+
+<style>
+  .contact-form {
+    margin-top: 20px;
+  }
+
+  .contact-form label {
+    color: #4a4a4a;
+    font-size: 0.875rem;
+  }
+
+  .contact-form input[type="text"],
+  .contact-form input[type="email"],
+  .contact-form textarea {
+    border: 1px solid #ccc;
+    border-radius: 0.375rem;
+    padding: 0.5rem 0.75rem;
+    width: 100%;
+    margin-bottom: 1rem;
+    color: #4a4a4a;
+    font-size: 1rem;
+    outline: none;
+  }
+
+  .contact-form input[type="checkbox"] {
+    margin-right: 0.375rem;
+  }
+
+  .green-text {
+    color: #78bf3b;
+  }
+</style>
+
+<script>
+  const hideInputsAndDisplayMessage = (
+    form: HTMLElement | null,
+    formInputs: HTMLElement | null
+  ) => {
+    if (!form || !formInputs) return;
+
+    // Hide form inputs
+    formInputs.style.display = "none";
+
+    // Create and display the success message
+    const successMessage = document.createElement("p");
+    successMessage.textContent = "Το μήνυμά σας στάλθηκε με επιτυχία!";
+    successMessage.classList.add(
+      "text-center",
+      "text-green-500",
+      "text-xl",
+      "animate-bounce"
+    );
+
+    // Append the success message to the form
+    form.appendChild(successMessage);
+  };
+
+  document.querySelector("form")?.addEventListener("submit", (event: Event) => {
+    handleSubmit(event);
+  });
+
+  const handleSubmit = (event: Event) => {
+    event.preventDefault();
+
+    const myForm = event.target as HTMLFormElement;
+    const formData = new FormData(myForm);
+
+    // Convert FormData to an object
+    const formDataObj: Record<string, string> = {};
+    formData.forEach((value, key) => {
+      formDataObj[key] = value as string;
+    });
+
+    fetch("/", {
+      method: "POST",
+      headers: { "Content-Type": "application/x-www-form-urlencoded" },
+      body: new URLSearchParams(formDataObj).toString(),
+    })
+      .then(() => console.log("Form successfully submitted"))
+      .catch((error) => console.log(error));
+
+    const form = document.getElementById("contact-form");
+    const formInputs = document.getElementById("form-inputs");
+
+    hideInputsAndDisplayMessage(form, formInputs);
+  };
+</script>

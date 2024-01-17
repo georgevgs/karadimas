@@ -1,0 +1,43 @@
+---
+import { Image } from "astro:assets";
+interface Images {
+  src: string;
+  alt: string;
+}
+
+export interface Props {
+  images: Images[];
+}
+
+const images = Astro.props.images as Images[];
+---
+
+<section class="carousel">
+  <div class="default-carousel" data-carousel="slide">
+    <div class="carousel-wrapper">
+      {
+        images.map((image: Images) => (
+          <div class="carousel-item" data-carousel-item>
+            <Image
+              src={image.src}
+              alt={image.alt}
+              width="1200"
+              height="800"
+              format="avif"
+            />
+          </div>
+        ))
+      }
+    </div>
+  </div>
+</section>
+
+<style>
+  .carousel,
+  .default-carousel,
+  .carousel-wrapper,
+  .carousel-item {
+    width: 1200px;
+    height: 800px;
+  }
+</style>
