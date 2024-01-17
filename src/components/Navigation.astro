@@ -3,7 +3,7 @@ import ResponsiveToggle from "./ResponsiveToggle.astro";
 import { DarkMode } from "accessible-astro-components";
 import { Image } from "astro:assets";
 // import logo from '../assets/img/logo.svg'
-import logo from "../assets/img/karadimas-logo.png";
+import logo from "../assets/img/karadimas-logo.svg";
 
 ---
 
@@ -11,6 +11,13 @@ import logo from "../assets/img/karadimas-logo.png";
   <div class="container">
     <a href="/" class="flex items-center gap-2 !no-underline">
       <!-- <Image src={logo} alt="Your Logo" width="47" height="37" /> -->
+      <!-- <img
+        id="nav-logo"
+        src="/public/social-preview-image.png"
+        alt="Karadimas"
+        width="200"
+        height="100"
+      /> -->
       <Image
         id="nav-logo"
         src={logo}
