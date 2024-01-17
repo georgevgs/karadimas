@@ -10,6 +10,7 @@ const {
   description = "A tile and bath store in Glyfada.",
   image = "/social-preview-image.png",
   author = "George Vagdas",
+  shouldHaveViewTransition = true,
 } = Astro.props;
 ---
 
@@ -32,6 +33,7 @@ const {
             .replaceAll(" ", "-")}`}
       image={image}
       author={author}
+      shouldHaveViewTransition={shouldHaveViewTransition}
     />
   </head>
   <body>

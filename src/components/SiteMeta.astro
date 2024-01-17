@@ -1,9 +1,10 @@
 ---
-import { ViewTransitions } from 'astro:transitions'
+import { ViewTransitions } from "astro:transitions";
 
-const { title, description, url, image, author } = Astro.props
+const { title, description, url, image, author, shouldHaveViewTransition } =
+  Astro.props;
 
-let subtitle = 'Karadimas'
+let subtitle = "Karadimas";
 ---
 
 <!-- general meta -->
@@ -16,11 +17,14 @@ let subtitle = 'Karadimas'
 <meta property="og:description" content={description} />
 <meta property="og:type" content="website" />
 <meta property="og:url" content={url} />
-<meta property="og:image" content={Astro.site ? `${Astro.site}${image}` : image} />
+<meta
+  property="og:image"
+  content={Astro.site ? `${Astro.site}${image}` : image}
+/>
 
 <!-- twitter card -->
 
 <!-- page title -->
 <title>{title} - {subtitle}</title>
 
-<ViewTransitions />
+{shouldHaveViewTransition && <ViewTransitions />}

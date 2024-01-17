@@ -1,6 +1,6 @@
 ---
 layout: ../layouts/MarkdownLayout.astro
-title: Markdown Page
+title: Προφίλ
 ---
 
 ## Η Εταιρία Καραδήμας - Ο αξιόπιστος σύμμαχός σας για πλακίδια και είδη υγιεινής!
