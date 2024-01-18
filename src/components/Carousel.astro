@@ -1,4 +1,6 @@
 ---
+import { Image } from "astro:assets";
+
 interface Images {
   src: string;
   alt: string;
@@ -29,7 +31,7 @@ const images = Astro.props.images as Images[];
               }`}
               data-carousel-item
             >
-              <img
+              <Image
                 src={image.src}
                 class="carousel-image rounded-lg"
                 alt={image.alt}

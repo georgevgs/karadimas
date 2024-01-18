@@ -1,12 +1,6 @@
 ---
 import DefaultLayout from "../layouts/DefaultLayout.astro";
 import Carousel from "../components/Carousel.astro";
-
-import showroomImage from "../assets/img/showroom/showroom.avif";
-import showroom2Image from "../assets/img/showroom/showroom-2.avif";
-import showroom3Image from "../assets/img/showroom/showroom-3.avif";
-import showroom4Image from "../assets/img/showroom/showroom-4.avif";
-import showroom5Image from "../assets/img/showroom/showroom-5.avif";
 ---
 
 <DefaultLayout title="Showroom" shouldHaveViewTransition={false}>
@@ -16,13 +10,57 @@ import showroom5Image from "../assets/img/showroom/showroom-5.avif";
     </slot>
   </h1>
   <Carousel
-    images = {[
-      { src: showroomImage, alt: "Showroom Image" },
-      { src: showroom2Image, alt: "Showroom Image 2" },
-      { src: showroom3Image, alt: "Showroom Image 3" },
-      { src: showroom4Image, alt: "Showroom Image 4" },
-      { src: showroom5Image, alt: "Showroom Image 5" },
-    ]};
+    images={[
+      {
+        src: "https://res.cloudinary.com/dz7agxkip/image/upload/v1705599496/showroom_ebwlen.avif",
+        alt: "Showroom Image",
+      },
+      {
+        src: "https://res.cloudinary.com/dz7agxkip/image/upload/v1705599567/showroom-2_keu3yp.avif",
+        alt: "Showroom Image 2",
+      },
+      {
+        src: "https://res.cloudinary.com/dz7agxkip/image/upload/v1705599568/showroom-3_rdwlis.avif",
+        alt: "Showroom Image 3",
+      },
+      {
+        src: "https://res.cloudinary.com/dz7agxkip/image/upload/v1705599568/showroom-4_jqi1bw.avif",
+        alt: "Showroom Image 4",
+      },
+      {
+        src: "https://res.cloudinary.com/dz7agxkip/image/upload/v1705599568/showroom-5_uy71a2.avif",
+        alt: "Showroom Image 5",
+      },
+      {
+        src: "https://res.cloudinary.com/dz7agxkip/image/upload/v1705599568/showroom-6_u1lnjz.avif",
+        alt: "Showroom Image 6",
+      },
+      {
+        src: "https://res.cloudinary.com/dz7agxkip/image/upload/v1705599568/showroom-7_xyxabd.avif",
+        alt: "Showroom Image 7",
+      },
+      {
+        src: "https://res.cloudinary.com/dz7agxkip/image/upload/v1705599569/showroom-8_uktrib.avif",
+        alt: "Showroom Image 8",
+      },
+      {
+        src: "https://res.cloudinary.com/dz7agxkip/image/upload/v1705599569/showroom-9_ijqhqw.avif",
+        alt: "Showroom Image 9",
+      },
+      {
+        src: "https://res.cloudinary.com/dz7agxkip/image/upload/v1705599569/showroom-10_p7wtto.avif",
+        alt: "Showroom Image 10",
+      },
+      {
+        src: "https://res.cloudinary.com/dz7agxkip/image/upload/v1705599570/showroom-11_qehzcg.avif",
+        alt: "Showroom Image 11",
+      },
+      {
+        src: "https://res.cloudinary.com/dz7agxkip/image/upload/v1705599570/showroom-12_fr2oqo.avif",
+        alt: "Showroom Image 12",
+      },
+    ]}
+    ;
   />
 </DefaultLayout>
 
