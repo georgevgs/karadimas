@@ -22,44 +22,28 @@ import showroom5Image from "../assets/img/showroom/showroom-5.avif";
       <!-- Carousel wrapper -->
       <div class="carousel-wrapper relative h-full overflow-hidden rounded-lg">
         <!-- Item 1 -->
-        <div class="carousel-item" data-carousel-item>
+        <div class="carousel-item ease-in-out rounded-lg" data-carousel-item>
           <img
             src={showroomImage.src}
-            class="carousel-image"
+            class="carousel-image rounded-lg"
             alt="Showroom Image"
           />
         </div>
         <!-- Item 2 -->
-        <div class="hidden duration-700 ease-in-out" data-carousel-item>
-          <img
-            src={showroom2Image.src}
-            class="carousel-image"
-            alt="..."
-          />
+        <div class="hidden duration-700 ease-in-out rounded-lg" data-carousel-item>
+          <img src={showroom2Image.src} class="carousel-image rounded-lg" alt="..." />
         </div>
         <!-- Item 3 -->
-        <div class="hidden duration-700 ease-in-out" data-carousel-item>
-          <img
-            src={showroom3Image.src}
-            class="carousel-image"
-            alt="..."
-          />
+        <div class="hidden duration-700 ease-in-out rounded-lg" data-carousel-item>
+          <img src={showroom3Image.src} class="carousel-image rounded-lg" alt="..." />
         </div>
         <!-- Item 4 -->
-        <div class="hidden duration-700 ease-in-out" data-carousel-item>
-          <img
-            src={showroom4Image.src}
-            class="carousel-image"
-            alt="..."
-          />
+        <div class="hidden duration-700 ease-in-out rounded-lg" data-carousel-item>
+          <img src={showroom4Image.src} class="carousel-image rounded-lg" alt="..." />
         </div>
         <!-- Item 5 -->
-        <div class="hidden duration-700 ease-in-out" data-carousel-item>
-          <img
-            src={showroom5Image.src}
-            class="carousel-image"
-            alt="..."
-          />
+        <div class="hidden duration-700 ease-in-out rounded-lg" data-carousel-item>
+          <img src={showroom5Image.src} class="carousel-image rounded-lg" alt="..." />
         </div>
       </div>
       <!-- Slider controls -->
@@ -146,7 +130,7 @@ import showroom5Image from "../assets/img/showroom/showroom-5.avif";
     width: 1200px;
     @media (max-width: 768px) {
       width: 100%;
-      height: calc(100vh - 250px);
+      height: calc(100vh - 225px);
     }
   }
 
@@ -169,3 +153,53 @@ import showroom5Image from "../assets/img/showroom/showroom-5.avif";
     display: block; // Ensure the items are not hidden
   }
 </style>
+
+<script>
+  // Mobile image carousel controls
+  let startX = 0;
+  let movedX = 0;
+
+  const carousel = document.getElementById(
+    "default-carousel"
+  ) as HTMLDivElement;
+  const prevButton = document.querySelector(
+    "[data-carousel-prev]"
+  ) as HTMLButtonElement;
+  const nextButton = document.querySelector(
+    "[data-carousel-next]"
+  ) as HTMLButtonElement;
+
+  if (carousel) {
+    carousel.addEventListener(
+      "touchstart",
+      (event) => {
+        startX = event.touches[0].clientX;
+      },
+      { passive: true }
+    );
+
+    carousel.addEventListener(
+      "touchmove",
+      (event) => {
+        movedX = event.touches[0].clientX - startX;
+      },
+      { passive: true }
+    );
+
+    carousel.addEventListener(
+      "touchend",
+      () => {
+        const threshold = 50;
+
+        if (movedX > threshold && prevButton) {
+          prevButton.click();
+        } else if (movedX < -threshold && nextButton) {
+          nextButton.click();
+        }
+
+        movedX = 0;
+      },
+      { passive: true }
+    );
+  }
+</script>
