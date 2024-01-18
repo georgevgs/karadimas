@@ -15,18 +15,16 @@ const images = Astro.props.images as Images[];
   <div class="flex w-full items-center justify-center">
     <div
       id="default-carousel"
-      class="carousel-container relative"
+      class="carousel-container relative rounded-lg"
       data-carousel="slide"
     >
       <!-- Carousel wrapper -->
       <div class="carousel-wrapper relative h-full overflow-hidden rounded-lg">
         <!-- Loop through images -->
         {
-          images.map((image: any, index: number) => (
+          images.map((image: Images) => (
             <div
-              class={`carousel-item rounded-lg ease-in-out ${
-                index === 0 ? "" : "hidden"
-              }`}
+              class="hidden rounded-lg duration-700 ease-in-out"
               data-carousel-item
             >
               <img
