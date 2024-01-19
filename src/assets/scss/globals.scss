@@ -2,13 +2,21 @@
 // | Globals
 // | -------------------------------------------------------------
 
-@use 'base/reset';
-@use 'base/root';
-@use 'base/font';
-@use 'base/list';
-@use 'base/container';
-@use 'base/breakpoint';
-@use 'base/button';
-@use 'base/color';
-@use 'base/outline';
-@use 'base/space-content';
+@use "base/reset";
+@use "base/root";
+@use "base/font";
+@use "base/list";
+@use "base/container";
+@use "base/breakpoint";
+@use "base/button";
+@use "base/color";
+@use "base/outline";
+@use "base/space-content";
+
+@media screen and (max-width: 768px) {
+  /* Add PageDescription below Carousel on mobile */
+  .layout-container {
+    display: flex;
+    flex-direction: column-reverse;
+  }
+}

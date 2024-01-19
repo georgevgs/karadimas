@@ -2,9 +2,9 @@
 const { src = "/images/karadimas-bath-hero-img.webp" } = Astro.props;
 ---
 
-<section class="hero my-24">
+<section class="hero my-20">
   <div class="container">
-    <div class="grid grid-cols-1 items-center gap-24 lg:grid-cols-2">
+    <div class="grid grid-cols-1 items-center gap-20 lg:grid-cols-2">
       <div class="flex flex-col items-center gap-8 md:items-start">
         <h1 class="text-center text-6xl md:text-left lg:text-8xl">
           <slot>
@@ -30,7 +30,7 @@ const { src = "/images/karadimas-bath-hero-img.webp" } = Astro.props;
           </a>
         </div> -->
       </div>
-      <img class="hidden lg:block" src={src} alt="" decoding="async" />
+      <img src={src} alt="" decoding="async" />
     </div>
   </div>
 </section>
