@@ -1,0 +1,27 @@
+---
+import Card from "../components/Card.astro";
+import PageDescription from "../components/PageDescription.astro";
+import DefaultLayout from "../layouts/DefaultLayout.astro";
+---
+
+<DefaultLayout title="Tiles">
+  <PageDescription
+    title={"Tiles"}
+    description={"Δημιουργήστε τον τέλειο χώρο με την εκλεπτυσμένη συλλογή μας από πλακάκια. Ανακαλύψτε ποικιλία σχεδίων και υλικών για να ανανεώσετε τον χώρο σας."}
+  />
+  <div class="cards-wrapper flex items-center justify-center">
+    <div class="cards flex max-w-[1280px] flex-wrap justify-center gap-4 px-4">
+      <Card
+        url="/tiles/living"
+        img="https://res.cloudinary.com/dz7agxkip/image/upload/v1705704121/living-tiles_td07gj.avif"
+        title="Πλακάκια Καθιστικού"
+      />
+
+      <Card
+        url="/tiles/bath"
+        img="https://res.cloudinary.com/dz7agxkip/image/upload/v1705704121/bath-tiles_nm5dyh.avif"
+        title="Πλακάκια Μπάνιου"
+      />
+    </div>
+  </div>
+</DefaultLayout>

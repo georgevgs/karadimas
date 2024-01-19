@@ -7,25 +7,57 @@ import DefaultLayout from "../layouts/DefaultLayout.astro";
 <DefaultLayout title="Bath">
   <PageDescription
     title={"Bath"}
-    description={"Επισκεφθείτε το Showroom μας και αναζητήστε το ιδανικό μπάνιο ανάμεσα σε μια μεγάλη και μοναδική γκάμα υλικών."}
+    description={"Τα πάντα για το μπάνιο. Βρείτε τα ιδανικά προϊόντα για ένα απόλυτο μπάνιο."}
   />
-  <div class="flex flex-wrap justify-center gap-4 px-4">
-    <Card
-      url="/bath/corian"
-      img="https://res.cloudinary.com/dz7agxkip/image/upload/v1705656403/corian-1_aqj0dt.avif"
-      title="Corian"
-    />
+  <div class="cards-wrapper flex items-center justify-center">
+    <div class="cards flex max-w-[1280px] flex-wrap justify-center gap-4 px-4">
+      <Card
+        url="/bath/corian"
+        img="https://res.cloudinary.com/dz7agxkip/image/upload/v1705656403/corian-1_aqj0dt.avif"
+        title="Corian"
+      />
 
-    <Card
-      url="/bath/sanitary-appliances"
-      img="https://res.cloudinary.com/dz7agxkip/image/upload/v1705666923/sanitary-appliances_iqukp5.avif"
-      title="Είδη Υγιεινής"
-    />
+      <Card
+        url="/bath/sanitary-appliances"
+        img="https://res.cloudinary.com/dz7agxkip/image/upload/v1705666923/sanitary-appliances_iqukp5.avif"
+        title="Είδη Υγιεινής"
+      />
 
-    <Card
-      url="/bath/bath-furniture"
-      img="https://res.cloudinary.com/dz7agxkip/image/upload/v1705667272/bath-furniture-1_zfmyas.avif"
-      title="Έπιπλα Μπάνιου"
-    />
+      <Card
+        url="/bath/bath-furniture"
+        img="https://res.cloudinary.com/dz7agxkip/image/upload/v1705667272/bath-furniture-1_zfmyas.avif"
+        title="Έπιπλα Μπάνιου"
+      />
+
+      <Card
+        url="/bath/bathtubs"
+        img="https://res.cloudinary.com/dz7agxkip/image/upload/v1705701832/bathtub_egpzzk.avif"
+        title="Μπανιέρες"
+      />
+
+      <Card
+        url="/bath/taps"
+        img="https://res.cloudinary.com/dz7agxkip/image/upload/v1705702487/taps_uizcdy.avif"
+        title="Μπαταρίες Μπάνιου"
+      />
+
+      <Card
+        url="/bath/sinks"
+        img="https://res.cloudinary.com/dz7agxkip/image/upload/v1705702732/sinks_lwanwa.avif"
+        title="Νιπτήρες"
+      />
+
+      <Card
+        url="/bath/showers"
+        img="https://res.cloudinary.com/dz7agxkip/image/upload/v1705702846/showers_zajzx2.avif"
+        title="Ντουσιέρες"
+      />
+
+      <Card
+        url="/bath/shower-columns"
+        img="https://res.cloudinary.com/dz7agxkip/image/upload/v1705702963/shower-columns_ryfubs.avif"
+        title="Στήλες ντους"
+      />
+    </div>
   </div>
 </DefaultLayout>
