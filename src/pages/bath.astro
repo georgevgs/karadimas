@@ -1,0 +1,31 @@
+---
+import Card from "../components/Card.astro";
+import PageDescription from "../components/PageDescription.astro";
+import DefaultLayout from "../layouts/DefaultLayout.astro";
+---
+
+<DefaultLayout title="Bath">
+  <PageDescription
+    title={"Bath"}
+    description={"Επισκεφθείτε το Showroom μας και αναζητήστε το ιδανικό μπάνιο ανάμεσα σε μια μεγάλη και μοναδική γκάμα υλικών."}
+  />
+  <div class="flex flex-wrap justify-center gap-4 px-4">
+    <Card
+      url="/bath/corian"
+      img="https://res.cloudinary.com/dz7agxkip/image/upload/v1705656403/corian-1_aqj0dt.avif"
+      title="Corian"
+    />
+
+    <Card
+      url="/bath/sanitary-appliances"
+      img="https://res.cloudinary.com/dz7agxkip/image/upload/v1705666923/sanitary-appliances_iqukp5.avif"
+      title="Είδη Υγιεινής"
+    />
+
+    <Card
+      url="/bath/bath-furniture"
+      img="https://res.cloudinary.com/dz7agxkip/image/upload/v1705667272/bath-furniture-1_zfmyas.avif"
+      title="Έπιπλα Μπάνιου"
+    />
+  </div>
+</DefaultLayout>
