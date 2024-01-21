@@ -5,9 +5,9 @@ const description = Astro.props.description;
 
 <section
   id="page-description"
-  class="mx-auto max-w-screen-xl transform rounded-md p-8 shadow-sm transition-all duration-500 ease-in-out hover:scale-105 md:mb-8 md:mt-8"
+  class="custom-shadow mx-auto max-w-[1200px] transform rounded-lg p-8 transition-all duration-500 ease-in-out hover:scale-105 mb-8 mt-8"
 >
-  <h1 class="text-primary mb-4 text-4xl font-bold dark:text-orange-500">
+  <h1 class="text-primary mb-4 text-4xl">
     <slot>
       <span class="text-gradient">{title}</span>
     </slot>
@@ -16,3 +16,10 @@ const description = Astro.props.description;
     {description}
   </h4>
 </section>
+
+<style>
+  .custom-shadow {
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.2),
+      0 4px 6px -4px rgba(0, 0, 0, 0.2);
+  }
+</style>
