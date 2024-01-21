@@ -1,4 +1,5 @@
 ---
+import { Media } from "accessible-astro-components";
 const { src = "/images/karadimas-bath-hero-img.webp" } = Astro.props;
 ---
 
@@ -30,7 +31,7 @@ const { src = "/images/karadimas-bath-hero-img.webp" } = Astro.props;
           </a>
         </div> -->
       </div>
-      <img src={src} alt="" decoding="async" />
+      <Media src={src} alt="karadimas-bath"/>
     </div>
   </div>
 </section>
