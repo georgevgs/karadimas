@@ -5,25 +5,17 @@
 @use 'breakpoint' as *;
 
 @font-face {
-  font-family: 'Inter';
-  src: local('Inter ExtraBold'), local('Inter-ExtraBold'), url('/fonts/Inter-ExtraBold.ttf') format('truetype');
-  font-weight: bold;
-  font-style: normal;
-  font-display: swap;
-}
-
-@font-face {
-  font-family: 'Inter';
-  src: local('Inter Bold'), local('Inter-Bold'), url('/fonts/Inter-Bold.ttf') format('truetype');
-  font-weight: bold;
-  font-style: normal;
-  font-display: swap;
-}
-
-@font-face {
-  font-family: 'Inter';
-  src: local('Inter Regular'), local('Inter-Regular'), url('/fonts/Inter-Regular.ttf') format('truetype');
+  font-family: 'Roboto';
+  src: local('Roboto Regular'), local('Roboto-Regular'), url('/fonts/Roboto-Regular.ttf') format('truetype');
   font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Roboto';
+  src: local('Roboto Bold'), local('Roboto-Bold'), url('/fonts/Roboto-Bold.ttf') format('truetype');
+  font-weight: bold;
   font-style: normal;
   font-display: swap;
 }
