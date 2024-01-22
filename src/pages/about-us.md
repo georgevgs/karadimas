@@ -3,7 +3,7 @@ layout: ../layouts/MarkdownLayout.astro
 title: Προφίλ
 ---
 
-<img src="https://www.ikaradimas.gr/uploads/1/6/4/7/16472714/header_images/1425832962.jpg" alt="Karadimas banner" width="1200px" style="border-radius: 0.5rem;" />
+<img src="https://res.cloudinary.com/dz7agxkip/image/upload/v1705915079/karadimas-banner_qn7bhw.avif" alt="Karadimas banner" style="border-radius: 0.5rem;" />
 
 ## Η Εταιρία Καραδήμας - Ο αξιόπιστος σύμμαχός σας για πλακίδια και είδη υγιεινής!
 

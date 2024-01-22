@@ -11,6 +11,11 @@ export const theme = {
     height: {
       800: "800px",
     },
+    colors: {
+      "custom-green": "#78bf3b",
+      "custom-cyan": "#6befe0",
+      "custom-dark": "#1a1a1d",
+    },
   },
 };
 export const plugins = [require("flowbite/plugin")];

@@ -11,13 +11,13 @@ import ContentMedia from "../components/ContentMedia.astro";
   <section class="my-40">
     <div class="container">
       <div class="grid grid-cols-1 gap-12 md:grid-cols-2 lg:grid-cols-3">
-        <Feature icon="mdi:grid" title="Πλακάκια">
-          Ανακαλύψτε πλήθος σχεδίων και υλικών σε πλακίδια, ιδανικά για κάθε
-          στυλ και χώρο. Μοντέρνα, κλασικά, ή μίνιμαλ, όλα διαθέσιμα.
-        </Feature>
-        <Feature icon="mdi:shower" title="Μπάνιο">
+        <Feature icon="mdi:shower" title="Μπάνιο" link="/bath">
           Αναζητήστε τα τελευταία τάσεις σε είδη υγιεινής και μπάνιου, με
           προσοχή στην αισθητική και τη λειτουργικότητα.
+        </Feature>
+        <Feature icon="mdi:grid" title="Πλακάκια" link="/tiles">
+          Ανακαλύψτε πλήθος σχεδίων και υλικών σε πλακίδια, ιδανικά για κάθε
+          στυλ και χώρο. Μοντέρνα, κλασικά, ή μίνιμαλ.
         </Feature>
         <Feature icon="mdi:truck-delivery" title="Άμεση Παράδοση">
           Εγγυημένη και γρήγορη παράδοση για όλες τις παραγγελίες. Η ασφάλεια
@@ -26,13 +26,16 @@ import ContentMedia from "../components/ContentMedia.astro";
       </div>
     </div>
   </section>
-  <ContentMedia imgSrc="/images/karadimas-showroom-outdoor.avif">
+  <ContentMedia
+    imgSrc="/images/karadimas-showroom-outdoor.avif"
+    alt="Karadimas Showroom"
+  >
     <h2>Showroom</h2>
     <p class="text-2xl">
-      Tο <a href="/showroom">showroom</a> μας στη Γλυφάδα προσφέρει
-      μία πλούσια γκάμα πλακιδίων και ειδών υγιεινής. Εδώ, θα ανακαλύψετε
-      τις τελευταίες τάσεις στον κόσμο του μπάνιου, ενώ οι ειδικοί
-      μας είναι πάντα διαθέσιμοι να σας προσφέρουν προσαρμοσμένες λύσεις και συμβουλές.
+      Tο <a href="/showroom">showroom</a> μας στη Γλυφάδα προσφέρει μία πλούσια γκάμα
+      πλακιδίων και ειδών υγιεινής. Εδώ, θα ανακαλύψετε τις τελευταίες τάσεις στον
+      κόσμο του μπάνιου, ενώ οι ειδικοί μας είναι πάντα διαθέσιμοι να σας προσφέρουν
+      προσαρμοσμένες λύσεις και συμβουλές.
     </p>
   </ContentMedia>
 
