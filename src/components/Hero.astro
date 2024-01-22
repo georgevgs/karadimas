@@ -1,5 +1,4 @@
 ---
-const { src = "/images/karadimas-bath-hero-img.webp" } = Astro.props;
 ---
 
 <section class="hero my-20">
@@ -14,7 +13,12 @@ const { src = "/images/karadimas-bath-hero-img.webp" } = Astro.props;
           </slot>
         </h1>
       </div>
-      <img src={src} alt="karadimas-bath" width="544" height="569" />
+      <img
+        src="https://res.cloudinary.com/dz7agxkip/image/upload/v1705921380/karadimas-bath-hero-img_bkewnh.avif"
+        alt="karadimas-bath"
+        width="544"
+        height="569"
+      />
     </div>
   </div>
 </section>
