@@ -2,14 +2,18 @@
 import DefaultLayout from "../../layouts/DefaultLayout.astro";
 import Carousel from "../../components/Carousel.astro";
 import PageDescription from "../../components/PageDescription.astro";
+import Breadcrump from "../../components/Breadcrump.astro";
 ---
 
 <DefaultLayout title="Μπανιέρες" shouldHaveViewTransition={false}>
   <div class="layout-container">
+    <Breadcrump category="Bath" subcategory="Μπανιέρες" />
+
     <PageDescription
       title={"ΜΠΑΝΙΕΡΕΣ"}
       description={"Από μοντέρνες και κομψές επιλογές έως κλασικά σχέδια που ξεχωρίζουν, προσφέρουμε τις καλύτερες επιλογές για να μετατρέψετε το μπάνιο σας σε έναν παράδεισο χαλάρωσης."}
     />
+
     <Carousel
       images={[
         {

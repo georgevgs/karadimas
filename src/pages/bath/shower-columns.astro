@@ -1,15 +1,19 @@
 ---
 import DefaultLayout from "../../layouts/DefaultLayout.astro";
 import Carousel from "../../components/Carousel.astro";
+import Breadcrump from "../../components/Breadcrump.astro";
 import PageDescription from "../../components/PageDescription.astro";
 ---
 
 <DefaultLayout title="Στήλες Ντους" shouldHaveViewTransition={false}>
   <div class="layout-container">
+    <Breadcrump category="Bath" subcategory="Στήλες Ντους" />
+
     <PageDescription
       title={"ΣΤΗΛΕΣ ΝΤΟΥΣ"}
       description={"Ανακαλύψτε την κορυφαία συλλογή στήλες ντους που προσφέρουμε για να μεταμορφώσετε το μπάνιο σας σε έναν χώρο πολυτέλειας και χαλάρωσης."}
     />
+
     <Carousel
       images={[
         {

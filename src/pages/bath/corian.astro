@@ -2,14 +2,18 @@
 import DefaultLayout from "../../layouts/DefaultLayout.astro";
 import Carousel from "../../components/Carousel.astro";
 import PageDescription from "../../components/PageDescription.astro";
+import Breadcrump from "../../components/Breadcrump.astro";
 ---
 
 <DefaultLayout title="Corian" shouldHaveViewTransition={false}>
   <div class="layout-container">
+    <Breadcrump category="Bath" subcategory="Corian" />
+
     <PageDescription
       title={"CORIAN"}
       description={"Εξερευνήστε την πρωτοποριακή και σύγχρονη αισθητική του Corian Bath και αφεθείτε στην μοναδική εμπειρία που προσφέρει."}
     />
+
     <Carousel
       images={[
         {

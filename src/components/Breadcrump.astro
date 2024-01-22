@@ -1,0 +1,48 @@
+---
+import { Icon } from "astro-icon/components";
+
+const category = Astro.props.category;
+const subcategory = Astro.props.subcategory;
+---
+
+<section id="breadcrumb" class="mx-auto mb-8 mt-8 max-w-[1200px]">
+  <nav aria-label="Breadcrumb">
+    <ol class="flex items-center gap-2">
+      <li>
+        <a href="/" class="breadcrump-nav-link flex items-center font-semibold">
+          <Icon name="mdi:home" class="breadcrump-home-icon h-6 w-6" />
+          Αρχική
+        </a>
+      </li>
+      <li>
+        <Icon name="mdi:chevron-right" class="h-6 w-6" />
+      </li>
+      <li>
+        <a
+          href={`/${category.toLowerCase()}`}
+          class="breadcrump-nav-link flex items-center font-semibold"
+        >
+          {category}
+        </a>
+      </li>
+      <li>
+        <Icon name="mdi:chevron-right" class="h-6 w-6" />
+      </li>
+      <li aria-current="page">
+        <span class="flex items-center font-semibold">
+          {subcategory}
+        </span>
+      </li>
+    </ol>
+  </nav>
+</section>
+
+<style>
+  .breadcrump-home-icon {
+    margin-right: 4px;
+  }
+
+  .breadcrump-nav-link {
+    text-decoration: none;
+  }
+</style>
