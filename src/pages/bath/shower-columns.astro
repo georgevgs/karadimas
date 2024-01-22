@@ -1,0 +1,47 @@
+---
+import DefaultLayout from "../../layouts/DefaultLayout.astro";
+import Carousel from "../../components/Carousel.astro";
+import PageDescription from "../../components/PageDescription.astro";
+---
+
+<DefaultLayout title="Στήλες Ντους" shouldHaveViewTransition={false}>
+  <div class="layout-container">
+    <PageDescription
+      title={"ΣΤΗΛΕΣ ΝΤΟΥΣ"}
+      description={"Ανακαλύψτε την κορυφαία συλλογή στήλες ντους που προσφέρουμε για να μεταμορφώσετε το μπάνιο σας σε έναν χώρο πολυτέλειας και χαλάρωσης."}
+    />
+    <Carousel
+      images={[
+        {
+          src: "https://res.cloudinary.com/dz7agxkip/image/upload/v1705960417/shower-columns-1_xg107e.avif",
+          alt: "Στήλες Ντους",
+        },
+        {
+          src: "https://res.cloudinary.com/dz7agxkip/image/upload/v1705960417/shower-columns-2_jbnhtl.avif",
+          alt: "Στήλες Ντους 2",
+        },
+        {
+          src: "https://res.cloudinary.com/dz7agxkip/image/upload/v1705960417/shower-columns-3_jnxbgw.avif",
+          alt: "Στήλες Ντους 3",
+        },
+        {
+          src: "https://res.cloudinary.com/dz7agxkip/image/upload/v1705960418/shower-columns-4_dnelqt.avif",
+          alt: "Στήλες Ντους 4",
+        },
+        {
+          src: "https://res.cloudinary.com/dz7agxkip/image/upload/v1705960418/shower-columns-5_cdpo1y.avif",
+          alt: "Στήλες Ντους 5",
+        },
+        {
+          src: "https://res.cloudinary.com/dz7agxkip/image/upload/v1705960418/shower-columns-6_eijnq1.avif",
+          alt: "Στήλες Ντους 6",
+        },
+        {
+          src: "https://res.cloudinary.com/dz7agxkip/image/upload/v1705960418/shower-columns-7_xhbhsw.avif",
+          alt: "Στήλες Ντους 7",
+        },
+      ]}
+      ;
+    />
+  </div>
+</DefaultLayout>

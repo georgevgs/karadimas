@@ -1,0 +1,47 @@
+---
+import DefaultLayout from "../../layouts/DefaultLayout.astro";
+import Carousel from "../../components/Carousel.astro";
+import PageDescription from "../../components/PageDescription.astro";
+---
+
+<DefaultLayout title="Μπανιέρες" shouldHaveViewTransition={false}>
+  <div class="layout-container">
+    <PageDescription
+      title={"ΜΠΑΝΙΕΡΕΣ"}
+      description={"Από μοντέρνες και κομψές επιλογές έως κλασικά σχέδια που ξεχωρίζουν, προσφέρουμε τις καλύτερες επιλογές για να μετατρέψετε το μπάνιο σας σε έναν παράδεισο χαλάρωσης."}
+    />
+    <Carousel
+      images={[
+        {
+          src: "https://res.cloudinary.com/dz7agxkip/image/upload/v1705956355/bathtubs-1_fyjbfg.avif",
+          alt: "Μπανιέρες",
+        },
+        {
+          src: "https://res.cloudinary.com/dz7agxkip/image/upload/v1705956355/bathtubs-2_h9f14o.avif",
+          alt: "Μπανιέρες 2",
+        },
+        {
+          src: "https://res.cloudinary.com/dz7agxkip/image/upload/v1705956356/bathtubs-3_gbxwr6.avif",
+          alt: "Μπανιέρες 3",
+        },
+        {
+          src: "https://res.cloudinary.com/dz7agxkip/image/upload/v1705956356/bathtubs-4_etljjt.avif",
+          alt: "Μπανιέρες 4",
+        },
+        {
+          src: "https://res.cloudinary.com/dz7agxkip/image/upload/v1705956356/bathtubs-5_zeusqc.avif",
+          alt: "Μπανιέρες 5",
+        },
+        {
+          src: "https://res.cloudinary.com/dz7agxkip/image/upload/v1705956356/bathtubs-6_xwbo99.avif",
+          alt: "Μπανιέρες 6",
+        },
+        {
+          src: "https://res.cloudinary.com/dz7agxkip/image/upload/v1705956356/bathtubs-7_vnwhwy.avif",
+          alt: "Μπανιέρες 7",
+        },
+      ]}
+      ;
+    />
+  </div>
+</DefaultLayout>

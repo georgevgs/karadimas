@@ -1,0 +1,55 @@
+---
+import DefaultLayout from "../../layouts/DefaultLayout.astro";
+import Carousel from "../../components/Carousel.astro";
+import PageDescription from "../../components/PageDescription.astro";
+---
+
+<DefaultLayout title="Ντουσιέρες" shouldHaveViewTransition={false}>
+  <div class="layout-container">
+    <PageDescription
+      title={"ΝΤΟΥΣΙΕΡΕΣ"}
+      description={"Επιλέξτε την ντουσιέρα που σας ταιριάζει από την μεγάλη ποικιλία των προϊόντων μας."}
+    />
+    <Carousel
+      images={[
+        {
+          src: "https://res.cloudinary.com/dz7agxkip/image/upload/v1705959867/showers-1_advz1u.avif",
+          alt: "Ντουσιέρες",
+        },
+        {
+          src: "https://res.cloudinary.com/dz7agxkip/image/upload/v1705959867/showers-2_qxythf.avif",
+          alt: "Ντουσιέρες 2",
+        },
+        {
+          src: "https://res.cloudinary.com/dz7agxkip/image/upload/v1705959867/showers-3_f1z3h9.avif",
+          alt: "Ντουσιέρες 3",
+        },
+        {
+          src: "https://res.cloudinary.com/dz7agxkip/image/upload/v1705959867/showers-4_oynpoe.avif",
+          alt: "Ντουσιέρες 4",
+        },
+        {
+          src: "https://res.cloudinary.com/dz7agxkip/image/upload/v1705959867/showers-5_z7qjag.avif",
+          alt: "Ντουσιέρες 5",
+        },
+        {
+          src: "https://res.cloudinary.com/dz7agxkip/image/upload/v1705959867/showers-6_zztjgg.avif",
+          alt: "Ντουσιέρες 6",
+        },
+        {
+          src: "https://res.cloudinary.com/dz7agxkip/image/upload/v1705959868/showers-7_yhir3r.avif",
+          alt: "Ντουσιέρες 7",
+        },
+        {
+          src: "https://res.cloudinary.com/dz7agxkip/image/upload/v1705959868/showers-8_phuu3e.avif",
+          alt: "Ντουσιέρες 8",
+        },
+        {
+          src: "https://res.cloudinary.com/dz7agxkip/image/upload/v1705959868/showers-10_xd8knt.avif",
+          alt: "Ντουσιέρες 10",
+        },
+      ]}
+      ;
+    />
+  </div>
+</DefaultLayout>
