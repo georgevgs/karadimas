@@ -1,0 +1,55 @@
+---
+import DefaultLayout from "../../layouts/DefaultLayout.astro";
+import Carousel from "../../components/Carousel.astro";
+import PageDescription from "../../components/PageDescription.astro";
+---
+
+<DefaultLayout title="Corian" shouldHaveViewTransition={false}>
+  <div class="layout-container">
+    <PageDescription
+      title={"CORIAN"}
+      description={"Εξερευνήστε την πρωτοποριακή και σύγχρονη αισθητική του Corian Bath και αφεθείτε στην μοναδική εμπειρία που προσφέρει."}
+    />
+    <Carousel
+      images={[
+        {
+          src: "https://res.cloudinary.com/dz7agxkip/image/upload/v1705936460/corian-1_xqvqpr.avif",
+          alt: "Corian",
+        },
+        {
+          src: "https://res.cloudinary.com/dz7agxkip/image/upload/v1705936461/corian-2_toxvih.avif",
+          alt: "Corian 2",
+        },
+        {
+          src: "https://res.cloudinary.com/dz7agxkip/image/upload/v1705936461/corian-3_pfsxzw.avif",
+          alt: "Corian 3",
+        },
+        {
+          src: "https://res.cloudinary.com/dz7agxkip/image/upload/v1705936461/corian-4_m1huly.avif",
+          alt: "Corian 4",
+        },
+        {
+          src: "https://res.cloudinary.com/dz7agxkip/image/upload/v1705936461/corian-5_yk0vpc.avif",
+          alt: "Corian 5",
+        },
+        {
+          src: "https://res.cloudinary.com/dz7agxkip/image/upload/v1705936462/corian-6_s3rfkp.avif",
+          alt: "Corian 6",
+        },
+        {
+          src: "https://res.cloudinary.com/dz7agxkip/image/upload/v1705936461/corian-7_ai7jhd.avif",
+          alt: "Corian 7",
+        },
+        {
+          src: "https://res.cloudinary.com/dz7agxkip/image/upload/v1705936461/corian-8_cqner3.avif",
+          alt: "Corian 8",
+        },
+        {
+          src: "https://res.cloudinary.com/dz7agxkip/image/upload/v1705936461/corian-9_m8hq4r.avif",
+          alt: "Corian 9",
+        },
+      ]}
+      ;
+    />
+  </div>
+</DefaultLayout>
