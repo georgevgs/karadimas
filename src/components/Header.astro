@@ -1,4 +1,5 @@
 ---
+import { Icon } from "astro-icon/components";
 import Navigation from "../components/Navigation.astro";
 import { SkipLinks } from "accessible-astro-components";
 ---
@@ -20,16 +21,28 @@ import { SkipLinks } from "accessible-astro-components";
             href="https://www.thekitchenstudio.gr/wardrobes/"
             title="thekitchenstudio.gr"
             rel="external noopener noreferrer"
-            target="_blank">Ντουλάπες Υπνοδωματίου</a
+            target="_blank"
+            class="link-with-icon"
           >
+            <span class="icon-text-container wardrobes">
+              Ντουλάπες Υπνοδωματίου
+              <Icon name="mdi:open-in-new" class="h-4 w-4" />
+            </span>
+          </a>
         </li>
         <li class="submenu-item">
           <a
             href="https://www.thekitchenstudio.gr/"
             title="thekitchenstudio.gr"
             rel="external noopener noreferrer"
-            target="_blank">Κουζίνα</a
+            target="_blank"
+            class="link-with-icon"
           >
+            <span class="icon-text-container">
+              Κουζίνα
+              <Icon name="mdi:open-in-new" class="h-4 w-4" />
+            </span>
+          </a>
         </li>
       </ul>
     </li>
@@ -69,6 +82,18 @@ import { SkipLinks } from "accessible-astro-components";
         [data-icon] path {
           fill: var(--action-color-state);
         }
+      }
+    }
+
+    .link-with-icon {
+      .icon-text-container {
+        display: flex;
+        align-items: center;
+        gap: 4px;
+      }
+
+      &:hover {
+        color: black !important;
       }
     }
   }
