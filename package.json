@@ -1,7 +1,7 @@
 {
   "name": "ikaradimas",
   "description": "Tile store in Glyfada.",
-  "version": "1.1.0",
+  "version": "1.1.1",
   "author": "George Vagdas",
   "homepage": "https://ikaradimas.gr/",
   "scripts": {
