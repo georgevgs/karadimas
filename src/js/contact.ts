@@ -1,4 +1,3 @@
-// Types
 type FormElements = HTMLFormControlsCollection & {
     name: HTMLInputElement;
     email: HTMLInputElement;
@@ -10,11 +9,9 @@ interface ContactForm extends HTMLFormElement {
     readonly elements: FormElements;
 }
 
-// DOM Element Selectors
 const getElement = (id: string): HTMLElement | null =>
     document.getElementById(id);
 
-// UI Functions
 const showElement = (element: HTMLElement): void =>
     element.classList.remove("hidden");
 const hideElement = (element: HTMLElement): void =>
@@ -37,7 +34,6 @@ const displayMessage = (
     showElement(element);
 };
 
-// Form Validation
 const isFormValid = (form: ContactForm): boolean => {
     const {name, email, message, terms} = form.elements;
     return (
@@ -46,17 +42,16 @@ const isFormValid = (form: ContactForm): boolean => {
     );
 };
 
-// Form Submission
 const submitForm = async (form: ContactForm): Promise<Response> => {
     const data = new FormData(form);
     return fetch(form.action, {
         method: form.method,
         body: data,
         headers: {Accept: "application/json"},
+        mode: 'cors',
     });
 };
 
-// Main Handler
 const handleSubmit = async (event: Event): Promise<void> => {
     event.preventDefault();
 
@@ -88,19 +83,23 @@ const handleSubmit = async (event: Event): Promise<void> => {
             form.reset();
             displayMessage(formStatus, "Το μήνυμά σας στάλθηκε επιτυχώς!");
         } else {
-            throw new Error("Form submission failed");
+            const errorData = await response.json().catch(() => ({}));
+            throw new Error(errorData.error || "Form submission failed");
         }
     } catch (error) {
-        displayMessage(
-            formStatus,
-            "Παρουσιάστηκε πρόβλημα κατά την αποστολή της φόρμας. Παρακαλώ δοκιμάστε ξανά.",
-            true
-        );
+        let errorMessage = "Παρουσιάστηκε πρόβλημα κατά την αποστολή της φόρμας. Παρακαλώ δοκιμάστε ξανά.";
+        if (error instanceof Error) {
+            console.error("Error submitting form:", error.message);
+            if (error.message.includes("NetworkError") || error.message.includes("Failed to fetch")) {
+                errorMessage = "Πρόβλημα δικτύου. Παρακαλώ ελέγξτε τη σύνδεσή σας και δοκιμάστε ξανά.";
+            }
+        } else {
+            console.error("Unknown error:", error);
+        }
+        displayMessage(formStatus, errorMessage, true);
         showElement(formInputs);
-        console.error("Error submitting form:", error);
     }
 };
 
-// Event Listener
 const form = getElement("contact-form") as ContactForm | null;
 form?.addEventListener("submit", handleSubmit);
