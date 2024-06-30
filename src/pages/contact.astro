@@ -27,7 +27,6 @@ const operatingHours = [
           id="contact-form"
           name="contact"
           class="transform rounded-lg p-6 shadow-md transition-transform duration-300"
-          novalidate
       >
         <div id="form-inputs">
           <input type="hidden" name="form-name" value="contact"/>
@@ -71,7 +70,11 @@ const operatingHours = [
           </div>
         </div>
       </form>
-      <div id="success-message" class="hidden"></div>
+      <div id="success-message" class="hidden fixed inset-0 flex items-center justify-center bg-black bg-opacity-50 z-50">
+        <div class="bg-white dark:bg-gray-800 p-6 rounded-lg shadow-lg max-w-md w-full mx-4">
+          <!-- The message content will be inserted here by JavaScript -->
+        </div>
+      </div>
     </div>
   </section>
   <hr
