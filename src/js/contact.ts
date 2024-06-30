@@ -21,17 +21,22 @@ const setElementContent = (element: HTMLElement, content: string): void => {
     element.innerHTML = content;
 };
 
-const displayMessage = (
-    element: HTMLElement,
-    message: string,
-    isError: boolean = false
-): void => {
-    const colorClass = isError ? "text-orange-500" : "green-text";
-    setElementContent(
-        element,
-        `<p class="text-center text-xl ${colorClass} animate-bounce">${message}</p>`
-    );
-    showElement(element);
+const displaySuccessMessage = (message: string): void => {
+    const formContainer = getElement("form-container");
+    const successMessage = getElement("success-message");
+    if (formContainer && successMessage) {
+        hideElement(formContainer);
+        setElementContent(successMessage, `<p class="text-center text-xl green-text">${message}</p>`);
+        showElement(successMessage);
+    }
+};
+
+const displayErrorMessage = (message: string): void => {
+    const errorMessage = getElement("error-message");
+    if (errorMessage) {
+        setElementContent(errorMessage, `<p class="text-center text-xl">${message}</p>`);
+        showElement(errorMessage);
+    }
 };
 
 const isFormValid = (form: ContactForm): boolean => {
@@ -48,7 +53,7 @@ const submitForm = async (form: ContactForm): Promise<Response> => {
         method: form.method,
         body: data,
         headers: {Accept: "application/json"},
-        mode: 'cors', // Explicitly set CORS mode
+        mode: 'cors',
     });
 };
 
@@ -56,32 +61,26 @@ const handleSubmit = async (event: Event): Promise<void> => {
     event.preventDefault();
 
     const form = event.target as ContactForm;
-    const formStatus = getElement("success-message");
-    const formInputs = getElement("form-inputs");
+    const formContainer = getElement("form-container");
+    const errorMessage = getElement("error-message");
 
-    if (!formStatus || !formInputs) {
+    if (!formContainer || !errorMessage) {
         console.error("Required DOM elements not found");
         return;
     }
 
     if (!isFormValid(form)) {
-        displayMessage(
-            formStatus,
-            "Παρακαλώ συμπληρώστε όλα τα απαιτούμενα πεδία",
-            true
-        );
+        displayErrorMessage("Παρακαλώ συμπληρώστε όλα τα απαιτούμενα πεδία");
         return;
     }
 
     try {
-        displayMessage(formStatus, "Αποστολή...");
-        hideElement(formInputs);
-
+        hideElement(errorMessage);
         const response = await submitForm(form);
 
         if (response.ok) {
             form.reset();
-            displayMessage(formStatus, "Το μήνυμά σας στάλθηκε επιτυχώς!");
+            displaySuccessMessage("Το μήνυμά σας στάλθηκε επιτυχώς!");
         } else {
             const errorData = await response.json().catch(() => ({}));
             throw new Error(errorData.error || "Form submission failed");
@@ -96,8 +95,7 @@ const handleSubmit = async (event: Event): Promise<void> => {
         } else {
             console.error("Unknown error:", error);
         }
-        displayMessage(formStatus, errorMessage, true);
-        showElement(formInputs);
+        displayErrorMessage(errorMessage);
     }
 };
 
