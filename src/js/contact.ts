@@ -48,7 +48,7 @@ const submitForm = async (form: ContactForm): Promise<Response> => {
         method: form.method,
         body: data,
         headers: {Accept: "application/json"},
-        mode: 'cors',
+        mode: 'cors', // Explicitly set CORS mode
     });
 };
 
