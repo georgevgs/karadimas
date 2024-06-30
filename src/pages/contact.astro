@@ -27,6 +27,7 @@ const operatingHours = [
           id="contact-form"
           name="contact"
           class="transform rounded-lg p-6 shadow-md transition-transform duration-300"
+          novalidate
       >
         <div id="form-inputs">
           <input type="hidden" name="form-name" value="contact"/>
@@ -70,6 +71,7 @@ const operatingHours = [
           </div>
         </div>
       </form>
+      <div id="success-message" class="hidden"></div>
     </div>
   </section>
   <hr
@@ -172,57 +174,4 @@ const operatingHours = [
   }
 </style>
 
-<script>
-  const hideInputsAndDisplayMessage = (
-      form: HTMLElement | null,
-      formInputs: HTMLElement | null
-  ) => {
-    if (!form || !formInputs) return;
-
-    // Hide form inputs
-    formInputs.style.display = "none";
-
-    // Create and display the success message
-    const successMessage = document.createElement("p");
-    successMessage.textContent = "Το μήνυμά σας στάλθηκε με επιτυχία!";
-    successMessage.classList.add(
-        "text-center",
-        "green-text",
-        "text-xl",
-        "animate-bounce"
-    );
-
-    // Append the success message to the form
-    form.appendChild(successMessage);
-  };
-
-  document.querySelector("form")?.addEventListener("submit", (event: Event) => {
-    handleSubmit(event);
-  });
-
-  const handleSubmit = (event: Event) => {
-    event.preventDefault();
-
-    const myForm = event.target as HTMLFormElement;
-    const formData = new FormData(myForm);
-
-    // Convert FormData to an object
-    const formDataObj: Record<string, string> = {};
-    formData.forEach((value, key) => {
-      formDataObj[key] = value as string;
-    });
-
-    fetch("/", {
-      method: "POST",
-      headers: {"Content-Type": "application/x-www-form-urlencoded"},
-      body: new URLSearchParams(formDataObj).toString(),
-    })
-        .then(() => console.log("Form successfully submitted"))
-        .catch((error) => console.log(error));
-
-    const form = document.getElementById("contact-form");
-    const formInputs = document.getElementById("form-inputs");
-
-    hideInputsAndDisplayMessage(form, formInputs);
-  };
-</script>
+<script src="../js/contact.ts"></script>
