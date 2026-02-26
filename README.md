@@ -1,18 +1,40 @@
-# Karadimas Plakakia
+# Karadimas — ikaradimas.gr
 
-🚀 [Live Preview](https://ikaradimas.gr/)
+Website for **Karadimas**, a tile and bath store in Glyfada, Greece. Built with Astro 5 and deployed on Vercel.
 
-## 🚀 Getting started
+[Live site →](https://ikaradimas.gr/)
 
-Clone this theme locally and run any of the following commands in your terminal:
+## Stack
 
-| Command           | Action                                       |
-| :---------------- | :------------------------------------------- |
-| `npm install`     | Installs dependencies                        |
-| `npm run dev`     | Starts local dev server at `localhost:4321`  |
-| `npm run build`   | Build your production site to `./dist/`      |
-| `npm run preview` | Preview your build locally, before deploying |
+- [Astro 5](https://astro.build/) — static site generator
+- [Tailwind CSS 3](https://tailwindcss.com/) — styling
+- [Flowbite](https://flowbite.com/) — carousel component
+- [Vercel](https://vercel.com/) — hosting & analytics
+- Images hosted on [Cloudinary](https://cloudinary.com/)
+- Contact form via [Formspree](https://formspree.io/)
 
-## ☕ Thank you!
+## Local development
 
-A big thank you to the creators of the awesome Astro static site generator and to all using this starter to make the web a bit more accessible for all people around the world :)
+```bash
+npm install
+npm run dev       # http://localhost:4321
+npm run build     # production build → ./dist/
+npm run preview   # preview the build locally
+```
+
+## Project structure
+
+```
+src/
+├── components/   # Reusable UI components
+├── layouts/      # DefaultLayout, MarkdownLayout
+├── pages/        # Routes — index, bath, tiles, showroom, erga, contact
+├── assets/       # SCSS globals
+└── js/           # TypeScript (contact form handler)
+public/           # Static assets (favicon, fonts, OG image)
+vercel.json       # Security headers (CSP, HSTS, Permissions-Policy)
+```
+
+## Author
+
+Built by [George Vagdas](https://vagdas.eu/)

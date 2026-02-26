@@ -17,8 +17,11 @@ const showElement = (element: HTMLElement): void =>
 const hideElement = (element: HTMLElement): void =>
     element.classList.add("hidden");
 
-const setElementContent = (element: HTMLElement, content: string): void => {
-    element.innerHTML = content;
+const createMessageParagraph = (message: string, extraClass?: string): HTMLParagraphElement => {
+    const p = document.createElement("p");
+    p.className = ["text-center", "text-xl", extraClass].filter(Boolean).join(" ");
+    p.textContent = message;
+    return p;
 };
 
 const displaySuccessMessage = (message: string): void => {
@@ -26,7 +29,7 @@ const displaySuccessMessage = (message: string): void => {
     const successMessage = getElement("success-message");
     if (formContainer && successMessage) {
         hideElement(formContainer);
-        setElementContent(successMessage, `<p class="text-center text-xl green-text">${message}</p>`);
+        successMessage.replaceChildren(createMessageParagraph(message, "green-text"));
         showElement(successMessage);
     }
 };
@@ -34,7 +37,7 @@ const displaySuccessMessage = (message: string): void => {
 const displayErrorMessage = (message: string): void => {
     const errorMessage = getElement("error-message");
     if (errorMessage) {
-        setElementContent(errorMessage, `<p class="text-center text-xl">${message}</p>`);
+        errorMessage.replaceChildren(createMessageParagraph(message));
         showElement(errorMessage);
     }
 };

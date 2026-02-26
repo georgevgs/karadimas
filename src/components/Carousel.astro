@@ -31,6 +31,7 @@ const images = Astro.props.images as Images[];
                 src={image.src}
                 class="carousel-image rounded-lg"
                 alt={image.alt}
+                loading="lazy"
               />
             </div>
           ))

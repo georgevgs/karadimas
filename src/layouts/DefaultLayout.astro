@@ -21,9 +21,7 @@ const {
     shouldHaveViewTransition = true,
 } = Astro.props;
 
-const siteUrl = Astro.site
-    ? `${Astro.site}/${title.toLowerCase().replaceAll(" ", "-")}`
-    : `https://ikaradimas.gr/${title.toLowerCase().replaceAll(" ", "-")}`;
+const siteUrl = Astro.url.href;
 ---
 
 <html lang="el" dir="ltr">
@@ -36,7 +34,7 @@ const siteUrl = Astro.site
 
     <SiteMeta
             title={title}
-            description={description.substring(0, 100)}
+            description={description.substring(0, 160)}
             url={siteUrl}
             image={image}
             author={author}
@@ -49,7 +47,54 @@ const siteUrl = Astro.site
     <slot/>
 </main>
 <Footer/>
-<script is:inline src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/1.8.0/flowbite.min.js"></script>
+<script
+  is:inline
+  src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/1.8.0/flowbite.min.js"
+  integrity="sha384-SXh3DHBSUxvOFk7+R9qN3hv+DtgPJz4vQwOArU6zxWGnvtR1sy+XmzKUkNh2qWST"
+  crossorigin="anonymous"
+></script>
+<script type="application/ld+json" is:inline>{JSON.stringify({
+  "@context": "https://schema.org",
+  "@type": "LocalBusiness",
+  "name": "Καραδήμας",
+  "url": "https://ikaradimas.gr",
+  "telephone": "+302109622589",
+  "email": "info@ikaradimas.gr",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "Γούναρη 209",
+    "addressLocality": "Γλυφάδα",
+    "postalCode": "166 74",
+    "addressCountry": "GR"
+  },
+  "geo": {
+    "@type": "GeoCoordinates",
+    "latitude": 37.869451,
+    "longitude": 23.763634
+  },
+  "openingHoursSpecification": [
+    {
+      "@type": "OpeningHoursSpecification",
+      "dayOfWeek": ["Monday", "Wednesday", "Saturday"],
+      "opens": "09:00",
+      "closes": "14:00"
+    },
+    {
+      "@type": "OpeningHoursSpecification",
+      "dayOfWeek": ["Tuesday", "Thursday", "Friday"],
+      "opens": "09:00",
+      "closes": "14:00"
+    },
+    {
+      "@type": "OpeningHoursSpecification",
+      "dayOfWeek": ["Tuesday", "Thursday", "Friday"],
+      "opens": "17:30",
+      "closes": "20:00"
+    }
+  ],
+  "image": "https://ikaradimas.gr/karadimas-social-preview-image.png",
+  "description": "Κατάστημα πλακιδίων και ειδών υγιεινής στη Γλυφάδα. 30 χρόνια εμπειρίας."
+})}</script>
 </body>
 </html>
 
