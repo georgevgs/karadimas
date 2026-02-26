@@ -1,0 +1,93 @@
+---
+import { Icon } from "astro-icon/components";
+
+const services = [
+  { icon: "mdi:grid",            label: "Πλακάκια μπάνιου" },
+  { icon: "mdi:sofa-outline",    label: "Πλακάκια καθιστικού & δαπέδου" },
+  { icon: "mdi:shower",          label: "Είδη Υγιεινής" },
+  { icon: "mdi:mirror",          label: "Έπιπλα Μπάνιου" },
+  { icon: "mdi:bathtub-outline", label: "Μπανιέρες & Ντουσιέρες" },
+  { icon: "mdi:water-pump",      label: "Νιπτήρες & Μπαταρίες" },
+  { icon: "mdi:countertop-outline", label: "Corian" },
+];
+---
+
+<section class="about my-16">
+  <div class="container">
+    <div class="about-card">
+      <div class="grid grid-cols-1 gap-10 lg:grid-cols-5">
+
+        <div class="lg:col-span-3 space-y-5">
+          <h2 class="text-3xl font-bold text-custom-green dark:text-custom-cyan">
+            Μπάνιο & Πλακάκια στη Γλυφάδα
+          </h2>
+          <p class="text-base leading-relaxed text-neutral-700 dark:text-neutral-300">
+            Με πάνω από 30 χρόνια παρουσίας στη Γλυφάδα, ο Καραδήμας
+            ειδικεύεται σε πλακάκια και είδη μπάνιου. Στο showroom μας θα
+            βρείτε πλούσια συλλογή από πλακάκια για κάθε χώρο — από πλακάκια
+            μπάνιου και καθιστικού έως πλακάκια δαπέδου για εσωτερικούς και
+            εξωτερικούς χώρους.
+          </p>
+          <p class="text-base leading-relaxed text-neutral-700 dark:text-neutral-300">
+            Συνεργαζόμαστε με αρχιτέκτονες και εσωτερικούς διακοσμητές για
+            ολοκληρωμένες λύσεις — από την επιλογή πλακάκιων έως τα είδη
+            υγιεινής και τα έπιπλα μπάνιου. Εξυπηρετούμε πελάτες σε ολόκληρη
+            την Αττική.
+          </p>
+        </div>
+
+        <div class="lg:col-span-2">
+          <p class="mb-4 text-sm font-semibold uppercase tracking-widest text-custom-green dark:text-custom-cyan">
+            Τι θα βρείτε
+          </p>
+          <ul class="space-y-3">
+            {services.map(({ icon, label }) => (
+              <li class="flex items-center gap-3 text-neutral-700 dark:text-neutral-300">
+                <Icon name={icon} class="h-5 w-5 shrink-0 text-custom-green dark:text-custom-cyan" />
+                <span>{label}</span>
+              </li>
+            ))}
+          </ul>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</section>
+
+<style lang="scss">
+  .about-card {
+    position: relative;
+    padding: 2rem;
+
+    > * {
+      position: relative;
+      z-index: 2;
+    }
+
+    &::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background-color: var(--neutral-100);
+      border: 3px solid var(--neutral-700);
+      border-radius: 1rem;
+      box-shadow: 0 0 0 6px var(--neutral-100);
+      z-index: 1;
+    }
+
+    &::after {
+      content: "";
+      position: absolute;
+      background-color: var(--action-color);
+      inset: 1rem -0.85rem -0.85rem 1rem;
+      border-radius: 1rem;
+      z-index: 0;
+    }
+  }
+
+  :global(.darkmode .about-card::before) {
+    background-color: var(--dark-100);
+    box-shadow: 0 0 0 6px var(--dark-100);
+  }
+</style>
