@@ -14,8 +14,8 @@ interface Props {
 }
 
 const {
-    title = "Karadimas",
-    description = "A tile and bath store in Glyfada.",
+    title = "Πλακάκια & Μπάνιο",
+    description = "Κατάστημα πλακάκια και μπάνια στη Γλυφάδα — Καραδήμας. Πλούσια συλλογή από πλακίδια, είδη υγιεινής και εξοπλισμό μπάνιου. 30+ χρόνια εμπειρία.",
     image = "/karadimas-social-preview-image.png",
     author = "George Vagdas",
     shouldHaveViewTransition = true,
@@ -55,15 +55,18 @@ const siteUrl = Astro.url.href;
 ></script>
 <script type="application/ld+json" is:inline>{JSON.stringify({
   "@context": "https://schema.org",
-  "@type": "LocalBusiness",
+  "@type": ["LocalBusiness", "HomeGoodsStore"],
   "name": "Καραδήμας",
   "url": "https://ikaradimas.gr",
   "telephone": "+302109622589",
   "email": "info@ikaradimas.gr",
+  "priceRange": "€€",
+  "currenciesAccepted": "EUR",
   "address": {
     "@type": "PostalAddress",
     "streetAddress": "Γούναρη 209",
     "addressLocality": "Γλυφάδα",
+    "addressRegion": "Αττική",
     "postalCode": "166 74",
     "addressCountry": "GR"
   },
@@ -71,6 +74,27 @@ const siteUrl = Astro.url.href;
     "@type": "GeoCoordinates",
     "latitude": 37.869451,
     "longitude": 23.763634
+  },
+  "areaServed": [
+    {"@type": "City", "name": "Γλυφάδα"},
+    {"@type": "City", "name": "Βούλα"},
+    {"@type": "City", "name": "Βουλιαγμένη"},
+    {"@type": "City", "name": "Άλιμος"},
+    {"@type": "City", "name": "Ελληνικό"}
+  ],
+  "hasOfferCatalog": {
+    "@type": "OfferCatalog",
+    "name": "Πλακάκια & Είδη Μπάνιου Γλυφάδα",
+    "itemListElement": [
+      {"@type": "Offer", "itemOffered": {"@type": "Product", "name": "Πλακάκια Γλυφάδα"}},
+      {"@type": "Offer", "itemOffered": {"@type": "Product", "name": "Πλακάκια Μπάνιου"}},
+      {"@type": "Offer", "itemOffered": {"@type": "Product", "name": "Πλακάκια Καθιστικού"}},
+      {"@type": "Offer", "itemOffered": {"@type": "Product", "name": "Είδη Υγιεινής"}},
+      {"@type": "Offer", "itemOffered": {"@type": "Product", "name": "Έπιπλα Μπάνιου"}},
+      {"@type": "Offer", "itemOffered": {"@type": "Product", "name": "Μπανιέρες"}},
+      {"@type": "Offer", "itemOffered": {"@type": "Product", "name": "Ντουσιέρες"}},
+      {"@type": "Offer", "itemOffered": {"@type": "Product", "name": "Νιπτήρες"}}
+    ]
   },
   "openingHoursSpecification": [
     {
@@ -93,7 +117,7 @@ const siteUrl = Astro.url.href;
     }
   ],
   "image": "https://ikaradimas.gr/karadimas-social-preview-image.png",
-  "description": "Κατάστημα πλακιδίων και ειδών υγιεινής στη Γλυφάδα. 30 χρόνια εμπειρίας."
+  "description": "Κατάστημα πλακάκια και μπάνια στη Γλυφάδα. Πλούσια συλλογή από πλακίδια, είδη υγιεινής, έπιπλα μπάνιου, μπανιέρες και ντουσιέρες. 30+ χρόνια εμπειρίας."
 })}</script>
 </body>
 </html>

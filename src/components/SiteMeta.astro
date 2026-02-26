@@ -4,12 +4,12 @@ import { ViewTransitions } from "astro:transitions";
 const { title, description, url, image, author, shouldHaveViewTransition } =
   Astro.props;
 
-let subtitle = "Karadimas";
+let subtitle = "Καραδήμας";
 const ogImage = Astro.site ? `${Astro.site}${image}` : image;
 ---
 
 <!-- general meta -->
-<meta name="title" content={`${title} - ${subtitle}`} />
+<meta name="title" content={`${title} | ${subtitle}`} />
 <meta name="description" content={description} />
 <meta name="author" content={author} />
 
@@ -17,21 +17,21 @@ const ogImage = Astro.site ? `${Astro.site}${image}` : image;
 <link rel="canonical" href={url} />
 
 <!-- open graph -->
-<meta property="og:title" content={`${title} - ${subtitle}`} />
+<meta property="og:title" content={`${title} | ${subtitle}`} />
 <meta property="og:description" content={description} />
 <meta property="og:type" content="website" />
 <meta property="og:url" content={url} />
 <meta property="og:image" content={ogImage} />
 <meta property="og:locale" content="el_GR" />
-<meta property="og:site_name" content="Karadimas" />
+<meta property="og:site_name" content="Καραδήμας" />
 
 <!-- twitter card -->
 <meta name="twitter:card" content="summary_large_image" />
-<meta name="twitter:title" content={`${title} - ${subtitle}`} />
+<meta name="twitter:title" content={`${title} | ${subtitle}`} />
 <meta name="twitter:description" content={description} />
 <meta name="twitter:image" content={ogImage} />
 
 <!-- page title -->
-<title>{title} - {subtitle}</title>
+<title>{title} | {subtitle}</title>
 
 {shouldHaveViewTransition && <ViewTransitions />}
