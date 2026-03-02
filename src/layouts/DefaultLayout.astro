@@ -54,7 +54,7 @@ const siteUrl = Astro.url.href;
   integrity="sha384-SXh3DHBSUxvOFk7+R9qN3hv+DtgPJz4vQwOArU6zxWGnvtR1sy+XmzKUkNh2qWST"
   crossorigin="anonymous"
 ></script>
-<script type="application/ld+json" is:inline>{JSON.stringify({
+<script type="application/ld+json" set:html={JSON.stringify({
   "@context": "https://schema.org",
   "@type": ["LocalBusiness", "HomeGoodsStore"],
   "name": "Καραδήμας",
@@ -123,7 +123,7 @@ const siteUrl = Astro.url.href;
   ],
   "image": "https://ikaradimas.gr/karadimas-social-preview-image.png",
   "description": "Κατάστημα πλακάκια και μπάνια στη Γλυφάδα. Πλούσια συλλογή από πλακίδια, είδη υγιεινής, έπιπλα μπάνιου, μπανιέρες και ντουσιέρες. 30+ χρόνια εμπειρίας."
-})}</script>
+})} />
 </body>
 </html>
 
