@@ -21,7 +21,9 @@ const {
     shouldHaveViewTransition = true,
 } = Astro.props;
 
-const siteUrl = Astro.url.href;
+const siteUrl = Astro.url.pathname === '/'
+    ? Astro.url.origin + '/'
+    : Astro.url.origin + Astro.url.pathname.replace(/\/$/, '');
 ---
 
 <html lang="el" dir="ltr">
@@ -91,14 +93,14 @@ const siteUrl = Astro.url.href;
     "@type": "OfferCatalog",
     "name": "Πλακάκια & Είδη Μπάνιου Γλυφάδα",
     "itemListElement": [
-      {"@type": "Offer", "itemOffered": {"@type": "Product", "name": "Πλακάκια Γλυφάδα"}},
-      {"@type": "Offer", "itemOffered": {"@type": "Product", "name": "Πλακάκια Μπάνιου"}},
-      {"@type": "Offer", "itemOffered": {"@type": "Product", "name": "Πλακάκια Καθιστικού"}},
-      {"@type": "Offer", "itemOffered": {"@type": "Product", "name": "Είδη Υγιεινής"}},
-      {"@type": "Offer", "itemOffered": {"@type": "Product", "name": "Έπιπλα Μπάνιου"}},
-      {"@type": "Offer", "itemOffered": {"@type": "Product", "name": "Μπανιέρες"}},
-      {"@type": "Offer", "itemOffered": {"@type": "Product", "name": "Ντουσιέρες"}},
-      {"@type": "Offer", "itemOffered": {"@type": "Product", "name": "Νιπτήρες"}}
+      {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Πλακάκια Γλυφάδα"}},
+      {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Πλακάκια Μπάνιου"}},
+      {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Πλακάκια Καθιστικού"}},
+      {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Είδη Υγιεινής"}},
+      {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Έπιπλα Μπάνιου"}},
+      {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Μπανιέρες"}},
+      {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Ντουσιέρες"}},
+      {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Νιπτήρες"}}
     ]
   },
   "openingHoursSpecification": [
