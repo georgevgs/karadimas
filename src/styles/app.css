@@ -1,0 +1,16 @@
+@import "tailwindcss";
+
+/* Use class-based dark mode with .darkmode class (set by accessible-astro-components DarkMode) */
+@custom-variant dark (&:where(.darkmode, .darkmode *));
+
+/* Custom theme extensions (replaces tailwind.config.js) */
+@theme {
+  --color-custom-green: #78bf3b;
+  --color-custom-cyan: #6befe0;
+  --color-custom-dark: #1a1a1d;
+  --width-1200: 1200px;
+  --height-800: 800px;
+}
+
+/* Flowbite source scanning */
+@source "../../node_modules/flowbite/**/*.js";

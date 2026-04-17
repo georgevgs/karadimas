@@ -1,13 +1,12 @@
 ---
 import ResponsiveToggle from "./ResponsiveToggle.astro";
 import { DarkMode } from "accessible-astro-components";
-import { Image } from "astro:assets";
 ---
 
 <div id="main-navigation" class="is-desktop pb-4">
   <div class="container">
     <a href="/" class="flex items-center gap-2 !no-underline">
-      <Image
+      <img
         id="nav-logo"
         src="https://res.cloudinary.com/dz7agxkip/image/upload/v1705524748/karadimas-logo_cxt3dl.avif"
         alt="Karadimas"
@@ -141,7 +140,7 @@ import { Image } from "astro:assets";
         "nav-logo"
       ) as HTMLImageElement;
 
-      if (logoElement && document.body.classList.contains("darkmode")) {
+      if (logoElement && document.documentElement.classList.contains("darkmode")) {
         logoElement.src =
           "https://res.cloudinary.com/dz7agxkip/image/upload/v1705524859/karadimas-logo-darkmode_qfuxja.avif";
       } else {
@@ -153,9 +152,9 @@ import { Image } from "astro:assets";
     // Run updateLogo on page load
     updateLogo();
 
-    // Observer to detect class changes on the body
+    // Observer to detect class changes on <html> (v5 DarkMode toggles class there)
     const observer = new MutationObserver(updateLogo);
-    observer.observe(document.body, {
+    observer.observe(document.documentElement, {
       attributes: true,
       attributeFilter: ["class"],
     });
@@ -481,6 +480,7 @@ import { Image } from "astro:assets";
   .darkmode-toggle {
     padding: 0;
     border: none;
+    box-shadow: none;
 
     svg {
       width: 30px;
@@ -491,7 +491,11 @@ import { Image } from "astro:assets";
       fill: var(--action-color);
     }
 
-    &:hover {
+    &:hover,
+    &:focus-visible {
+      border: none;
+      box-shadow: none;
+
       svg path {
         fill: var(--action-color-state);
       }

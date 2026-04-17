@@ -2,27 +2,33 @@ import {defineConfig} from "astro/config";
 import sitemap from "@astrojs/sitemap";
 import robotsTxt from "astro-robots-txt";
 import mdx from "@astrojs/mdx";
-import tailwind from "@astrojs/tailwind";
+import tailwindcss from "@tailwindcss/vite";
 import compress from "astro-compress";
 import icon from "astro-icon";
-import vercel from "@astrojs/vercel/static";
+import vercel from "@astrojs/vercel";
 
 export default defineConfig({
     site: "https://ikaradimas.gr",
-    compressHTML: true,
     output: "static",
     adapter: vercel({
         webAnalytics: {
             enabled: true,
         },
     }),
+    image: {
+        layout: "constrained",
+    },
+    prefetch: {
+        prefetchAll: true,
+        defaultStrategy: "viewport",
+    },
+    vite: {
+        plugins: [tailwindcss()],
+    },
     integrations: [
         sitemap(),
         mdx(),
         icon(),
-        tailwind({
-            applyBaseStyles: false
-        }),
         compress(),
         robotsTxt()
     ],
