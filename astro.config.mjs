@@ -29,7 +29,10 @@ export default defineConfig({
         sitemap(),
         mdx(),
         icon(),
-        compress(),
+        // CSS: false — astro-compress's csso minifier strips Tailwind v4's
+        // modern `@media (width>=…)` range queries, dropping all responsive
+        // variants. Vite already minifies CSS, so this pass added ~3% anyway.
+        compress({ CSS: false }),
         robotsTxt()
     ],
 });
