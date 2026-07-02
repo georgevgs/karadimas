@@ -1,6 +1,14 @@
 # Dependencies
 node_modules/
 
+# Lockfiles — Bun is the only package manager (locally and on Vercel).
+# The committed bun.lock (text) makes Vercel use Bun >=1.2. Ignore other
+# managers' lockfiles so a stray `npm install` can't add a package-lock.json
+# that flips Vercel's auto-detection back to npm.
+package-lock.json
+yarn.lock
+pnpm-lock.yaml
+
 # Build output
 dist/
 .vercel/

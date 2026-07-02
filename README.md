@@ -1,13 +1,13 @@
 # Karadimas — ikaradimas.gr
 
-Website for **Karadimas**, a tile and bath store in Glyfada, Greece. Built with Astro 5 and deployed on Vercel.
+Website for **Karadimas**, a tile and bath store in Glyfada, Greece. Built with Astro 7 and deployed on Vercel.
 
 [Live site →](https://ikaradimas.gr/)
 
 ## Stack
 
-- [Astro 5](https://astro.build/) — static site generator
-- [Tailwind CSS 3](https://tailwindcss.com/) — styling
+- [Astro 7](https://astro.build/) — static site generator
+- [Tailwind CSS 4](https://tailwindcss.com/) — styling (via `@tailwindcss/vite`)
 - [Flowbite](https://flowbite.com/) — carousel component
 - [Vercel](https://vercel.com/) — hosting & analytics
 - Images hosted on [Cloudinary](https://cloudinary.com/)
@@ -15,12 +15,18 @@ Website for **Karadimas**, a tile and bath store in Glyfada, Greece. Built with 
 
 ## Local development
 
+This project uses [Bun](https://bun.sh/) as its only package manager. The text lockfile `bun.lock` is committed; do **not** run `npm install` (a `package-lock.json` would make Vercel switch away from Bun — see below).
+
 ```bash
-npm install
-npm run dev       # http://localhost:4321
-npm run build     # production build → ./dist/
-npm run preview   # preview the build locally
+bun install
+bun run dev       # http://localhost:4321
+bun run build     # production build → ./dist/
+bun run preview   # preview the build locally
 ```
+
+## Deployment
+
+Deployed on Vercel. Vercel auto-detects the package manager from the committed lockfile: because only `bun.lock` (text format) is present, it runs `bun install` with Bun ≥ 1.2 and then the framework build (`astro build`). Keeping `package-lock.json` / `yarn.lock` / `pnpm-lock.yaml` out of the repo (they're gitignored) is what keeps that detection on Bun.
 
 ## Project structure
 
